@@ -1,20 +1,16 @@
 /*
- * genera un arreglo de 10 posiciones con numeros aleatorios no repetidos entre si 
+ * crea un arreglo de 100 posiciones que contenga los numeros del uno al cien para obtener la suma y 
+ * la media de todos
 */
-
-import java.util.Random;
-import java.util.Arrays;
-
-public class Main{
+public class Main {
     public static void main(String args[]) {
-        int[] arr = new int[10];
-        Random rnd = new Random();
-        for(int i = 0; i < arr.length; i++){
-            int n = rnd.nextInt();
-            if(!Arrays.asList(arr).contains(n)){
-                arr[i] = n;
-            }
+        int[] arr = new int[100];
+        int s = 0;
+        for(int i = 1; i <= arr.length; i++){
+            arr[i-1] = i;
+            s += arr[i-1];
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Suma: " + s);
+        System.out.println("Promedio: " + (s / arr.length));
     }
 }
